@@ -1,0 +1,8 @@
+@import './vars';
+
+.title {
+  font-size: $titleSize;
+  line-height: $titleHeight;
+  text-align: center;
+  margin: 120px 0 56px;
+}

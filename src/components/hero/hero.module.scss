@@ -1,0 +1,56 @@
+@import '../../styles/vars';
+
+.hero {
+  position: relative;
+  max-width: 650px;
+  overflow: visible;
+  color: $black;
+  margin-bottom: 200px;
+  padding-top: 100px;
+  &::after {
+    content: ' ';
+    position: absolute;
+    background-image: url('assets/home-hero.png');
+    width: 872px;
+    height: 532px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 100%;
+  }
+  &Title {
+    font-size: $boldSize;
+    line-height: $boldHeight;
+  }
+
+  &Text {
+    font-size: $regularSize;
+    line-height: $regularHeight;
+  }
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+
+  &Item {
+    background: linear-gradient(0deg, #ffffff 0%, #f5f7ff 100%);
+    box-shadow: 0px -8px 0px #f1f3ff;
+    width: 270px;
+    border-radius: 24px;
+    padding: 30px;
+    font-size: $regularSizeSm;
+    line-height: $regularHeightSm;
+
+    &Title {
+      font-size: $boldSizeSm;
+      line-height: $boldHeightSm;
+      font-weight: bold;
+      &Blue {
+        color: $blue;
+      }
+    }
+  }
+}
