@@ -1,0 +1,51 @@
+@import '../../styles/vars';
+
+.persons {
+  &Title {
+    font-size: $titleSize;
+    line-height: $titleHeight;
+    margin-top: 159px;
+    margin-bottom: 102px;
+  }
+
+  &List {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &Item {
+      max-width: 270px;
+      box-shadow: 0px 14px 50px rgba(132, 154, 182, 0.12);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex !important;
+      flex-direction: column-reverse;
+      color: $black;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 0.8 !important;
+      }
+
+      &TextWrapper {
+        background: #fff;
+        text-align: center;
+        max-height: 153px;
+      }
+
+      &Title {
+        font-size: $semiboldSize;
+        line-height: $semiboldHeight;
+        font-weight: bold;
+        margin: 45px 0 8px;
+      }
+
+      &Subtitle {
+        font-size: $regularSizeSSm;
+        line-height: $regularHeightSSm;
+        margin: 8px 20px 50px !important;
+      }
+    }
+  }
+}

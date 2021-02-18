@@ -1,0 +1,78 @@
+@import '../../styles/vars';
+
+.form {
+  background: linear-gradient(5.94deg, #6378da 5.81%, #6a81e3 94.86%);
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 120px 70px 130px;
+  color: $white;
+  margin-top: 90px;
+
+  &Title {
+    color: $white;
+    font-size: $titleSize;
+    line-height: $titleHeight;
+    margin: 0 0 37px;
+  }
+
+  &Fields {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &Input {
+    color: $white;
+    background: #94a4ed;
+    border: none;
+    width: 100%;
+    padding: 12px 24px 16px;
+    border-radius: 12px;
+    font-size: $regularSizeSm;
+    line-height: 24px;
+    &::placeholder {
+      color: $gray;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &Field {
+    position: relative;
+    display: flex;
+    flex: 0.3;
+
+    &Error {
+      position: absolute;
+      color: $gray;
+      bottom: -30px;
+      margin: 0;
+    }
+  }
+
+  button {
+    margin: 48px 0 0;
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+}
+
+.formWrapper {
+  position: relative;
+  z-index: 10;
+
+  &::before {
+    content: ' ';
+    width: calc(100vw + 200%);
+    left: -200%;
+    top: 53%;
+    height: 690px;
+    background-color: $black;
+    position: absolute;
+    z-index: -1;
+  }
+}

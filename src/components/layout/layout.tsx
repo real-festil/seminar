@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Header from 'components/header';
 import styles from './layout.module.scss';
+import Footer from '../footer';
 
 const Layout = ({
   location,
@@ -31,6 +32,7 @@ const Layout = ({
       <div className={styles.innerWrapper}>
         <header>{header}</header>
         <main>{children}</main>
+        <Footer />
       </div>
     </div>
   );

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_authors_authors",
+  "info": {
+    "name": "Authors",
+    "icon": "diagnoses",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "fullName": {
+      "type": "string",
+      "required": true
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    },
+    "feature": {
+      "type": "component",
+      "repeatable": true,
+      "component": "authors.feature"
+    },
+    "picture": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    }
+  }
+}

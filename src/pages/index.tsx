@@ -5,6 +5,8 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Hero from 'components/hero';
 import styles from '../styles/indexPage.module.scss';
+import Persons from 'components/persons';
+import MindMapForm from 'components/mindMapForm';
 
 interface IndexPageProps extends PageProps {
   data: {
@@ -36,6 +38,8 @@ const BlogIndex = ({ data, location }: IndexPageProps) => {
         allowFullScreen
         title="DIDDLY SQUAT"
       ></iframe>
+      <Persons />
+      <MindMapForm />
     </Layout>
   );
 };

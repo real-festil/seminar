@@ -1,0 +1,100 @@
+@import '../../styles/vars';
+
+.footer {
+  z-index: 10;
+  position: relative;
+  box-shadow: 0px 70px 80px rgba(52, 69, 134, 0.05);
+  border-radius: 50px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
+  padding: 120px 77px;
+
+  &Title {
+    color: $black;
+    font-size: $titleSize;
+    line-height: $titleHeight;
+    margin: 0;
+  }
+
+  &SubTitle {
+    font-size: 20px;
+    line-height: 36px;
+    margin: 10px 0 40px;
+  }
+
+  &Avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+  }
+
+  &Name {
+    font-size: $boldSizeSm;
+    line-height: $boldHeightSm;
+    margin: 30px 0 6px;
+    font-weight: bold;
+  }
+
+  &Position {
+    font-size: $regularSizeSm;
+    line-height: $regularHeightSm;
+    margin: 0 0 40px;
+  }
+
+  &Contacts {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    &Contact {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-right: 16px;
+      }
+
+      &Text {
+        color: $black;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 28px;
+        margin: 0;
+      }
+    }
+  }
+
+  &Nav {
+    margin: 120px 0;
+    display: flex;
+    flex: 0.5;
+    justify-content: space-between;
+
+    &Link {
+      font-size: $regularSizeSSm;
+      line-height: 22px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    &Img {
+      height: 20px;
+      margin-left: 8px;
+    }
+
+    &Wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+footer {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

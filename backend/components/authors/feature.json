@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_authors_features",
+  "info": {
+    "name": "feature",
+    "icon": "angle-right"
+  },
+  "options": {},
+  "attributes": {
+    "feature": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

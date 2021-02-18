@@ -19,4 +19,13 @@
   line-height: $semiboldHeight;
   padding: 12px 20px 16px 22px;
   cursor: pointer;
+  font-weight: bold;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: none;
+  }
 }

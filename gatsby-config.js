@@ -1,4 +1,4 @@
-const path = require(`path`)
+const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
@@ -73,12 +73,23 @@ module.exports = {
         src: path.join(__dirname, `src`),
         pages: path.join(__dirname, `src/pages`),
         components: path.join(__dirname, `src/components`),
+        utils: path.join(__dirname, `src/utils`),
+        icons: path.join(__dirname, `src/icons`),
         assets: path.join(__dirname, `content/assets`),
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: process.env.API_URL || `http://localhost:1337`,
+        contentTypes: [
+          // List of the Content Types you want to be able to request from Gatsby.
+          `authors`,
+        ],
+        queryLimit: 1000,
+      },
+    },
     `gatsby-plugin-offline`,
     `gatsby-plugin-sass`,
   ],
-}
+};

@@ -1,0 +1,50 @@
+@import '../../../styles/vars';
+
+.person {
+  display: flex;
+  margin-bottom: 120px;
+
+  &Image {
+    border-radius: 24px;
+    width: 340px;
+  }
+
+  &Info {
+    margin-left: 60px;
+    font-size: $semiboldSize;
+    line-height: 24px;
+
+    &Title {
+      font-size: $boldSizeSm;
+      line-height: $boldHeightSm;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    &Text {
+      margin: 0;
+    }
+
+    &List {
+      margin-top: 43px;
+      list-style: none;
+      padding-left: 36px;
+      li {
+        margin-bottom: 12px;
+        position: relative;
+
+        &::before {
+          content: ' ';
+          width: 14px;
+          height: 14px;
+          background: linear-gradient(5.94deg, #7a8ee9 5.81%, #a7b5f2 94.86%);
+          position: absolute;
+          left: -36px;
+          top: 0;
+          bottom: 0;
+          transform: translateY(50%);
+        }
+      }
+    }
+  }
+}
