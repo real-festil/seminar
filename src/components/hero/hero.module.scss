@@ -7,6 +7,18 @@
   color: $black;
   margin-bottom: 200px;
   padding-top: 100px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+    padding-top: 0;
+    margin-bottom: 69px;
+
+    button {
+      width: calc(100% - 40px);
+      margin: 0 20px;
+    }
+  }
+
   &::after {
     content: ' ';
     position: absolute;
@@ -17,15 +29,58 @@
     background-repeat: no-repeat;
     top: 0;
     left: 100%;
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
+
+  &Dates {
+    display: flex;
+
+    &Block {
+      &:first-child {
+        margin-right: 50px;
+      }
+
+      &Label {
+        font-size: 16px;
+        line-height: 28px;
+        margin: 0;
+      }
+
+      &Date {
+        font-size: 20px;
+        line-height: 36px;
+        font-weight: bold;
+        margin: 6px 0 30px;
+      }
+    }
+  }
+
   &Title {
     font-size: $boldSize;
     line-height: $boldHeight;
+
+    @media (max-width: 768px) {
+      font-size: 30px;
+      line-height: 50px;
+      margin-top: 0;
+      padding: 0 20px;
+    }
   }
 
   &Text {
     font-size: $regularSize;
     line-height: $regularHeight;
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
+  }
+
+  &Img {
+    width: 100%;
   }
 }
 
@@ -34,6 +89,12 @@
   display: flex;
   justify-content: space-between;
   padding: 0;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    flex-direction: column;
+    margin-bottom: 0;
+  }
 
   &Item {
     background: linear-gradient(0deg, #ffffff 0%, #f5f7ff 100%);
@@ -44,6 +105,14 @@
     font-size: $regularSizeSm;
     line-height: $regularHeightSm;
 
+    @media (max-width: 768px) {
+      width: 100%;
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
     &Title {
       font-size: $boldSizeSm;
       line-height: $boldHeightSm;
@@ -52,5 +121,11 @@
         color: $blue;
       }
     }
+  }
+}
+
+.webinarImg {
+  @media (max-width: 768px) {
+    padding: 0 20px;
   }
 }

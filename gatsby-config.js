@@ -2,7 +2,7 @@ const path = require(`path`);
 
 module.exports = {
   siteMetadata: {
-    title: `Mobile Marketing and Business Academy`,
+    title: `MindMap`,
     author: {
       name: `Roman Gladyshev`,
     },

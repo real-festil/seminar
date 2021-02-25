@@ -1,0 +1,24 @@
+.modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &Title {
+    font-size: 30px;
+    line-height: 50px;
+    margin: 0;
+  }
+
+  &Text {
+    font-size: 20px;
+    line-height: 36px;
+    margin: 10px 0 80px;
+    max-width: 400px;
+  }
+
+  button {
+    width: 100%;
+  }
+}

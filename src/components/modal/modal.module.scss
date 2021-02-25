@@ -1,0 +1,33 @@
+.backdrop {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  width: 100%;
+  height: 100%;
+  background: rgba(1, 1, 1, 0.4);
+}
+
+.modal {
+  background: #fff;
+  bottom: 50%;
+  right: 50%;
+  position: fixed;
+  z-index: 21;
+  transform: translate(50%, 50%);
+  border-radius: 12px;
+
+  &Inner {
+    position: relative;
+    padding: 90px 25px 60px;
+    min-width: 300px;
+    min-height: 300px;
+  }
+
+  &Close {
+    position: absolute;
+    right: 23px;
+    top: 19px;
+    cursor: pointer;
+  }
+}

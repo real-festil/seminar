@@ -3,6 +3,26 @@ import React, { useState, useRef } from 'react';
 import styles from './persons.module.scss';
 import BackgroundImage from 'gatsby-background-image';
 import Person from './person';
+import Carousel, { DotProps } from 'react-multi-carousel';
+import MediaQuery from 'react-responsive';
+import './carousel.css';
+
+const responsive = {
+  mobile: {
+    breakpoint: { max: 4000, min: 0 },
+    items: 1,
+  },
+};
+
+const CustomDot = ({ onClick, ...rest }: DotProps) => {
+  const { active } = rest;
+  return (
+    <div
+      className={active ? styles.sliderDotActive : styles.sliderDot}
+      onClick={() => onClick!()}
+    />
+  );
+};
 
 const Persons = () => {
   const data = useStaticQuery(graphql`
@@ -55,7 +75,6 @@ const Persons = () => {
   return (
     <section className={styles.persons} ref={ref}>
       <h2 className={styles.personsTitle}>Авторы MindMap&#39;a</h2>
-      {console.log(data.allStrapiAuthors.edges)}
       <Person
         person={
           data.allStrapiAuthors.edges.find(
@@ -68,25 +87,63 @@ const Persons = () => {
           const { Author } = el.node;
 
           return (
-            <li key={el.node.id}>
-              <BackgroundImage
-                fixed={Author.picture.imageFile.childImageSharp.fixed}
-                className={styles.personsListItem}
-                onClick={() => onPersonSelect(el.node.id)}
-              >
-                <div className={styles.personsListItemTextWrapper}>
-                  <p className={styles.personsListItemTitle}>
-                    {Author.fullName}
-                  </p>
-                  <p className={styles.personsListItemSubtitle}>
-                    {Author.position}
-                  </p>
-                </div>
-              </BackgroundImage>
-            </li>
+            <>
+              <MediaQuery minDeviceWidth={768}>
+                <li key={el.node.id}>
+                  <BackgroundImage
+                    fixed={Author.picture.imageFile.childImageSharp.fixed}
+                    className={styles.personsListItem}
+                    onClick={() => onPersonSelect(el.node.id)}
+                  >
+                    <div className={styles.personsListItemTextWrapper}>
+                      <p className={styles.personsListItemTitle}>
+                        {Author.fullName}
+                      </p>
+                      <p className={styles.personsListItemSubtitle}>
+                        {Author.position}
+                      </p>
+                    </div>
+                  </BackgroundImage>
+                </li>
+              </MediaQuery>
+            </>
           );
         })}
       </ul>
+      <MediaQuery maxDeviceWidth={768}>
+        <Carousel
+          responsive={responsive}
+          showDots
+          arrows={false}
+          centerMode
+          infinite
+          renderDotsOutside
+          customDot={<CustomDot />}
+        >
+          {data.allStrapiAuthors.edges.map((el: any) => {
+            const { Author } = el.node;
+
+            return (
+              <div key={el.node.id}>
+                <BackgroundImage
+                  fixed={Author.picture.imageFile.childImageSharp.fixed}
+                  className={styles.personsListItem}
+                  onClick={() => onPersonSelect(el.node.id)}
+                >
+                  <div className={styles.personsListItemTextWrapper}>
+                    <p className={styles.personsListItemTitle}>
+                      {Author.fullName}
+                    </p>
+                    <p className={styles.personsListItemSubtitle}>
+                      {Author.position}
+                    </p>
+                  </div>
+                </BackgroundImage>
+              </div>
+            );
+          })}
+        </Carousel>
+      </MediaQuery>
     </section>
   );
 };

@@ -4,11 +4,15 @@ import Button from '../button';
 import styles from './mindMapForm.module.scss';
 import { required, isEmail, composeValidators } from 'utils/validate';
 
-const MindMapForm = () => {
+const MindMapForm = ({ submitHandler }: { submitHandler?: () => void }) => {
+  const onSubmit = (v: any) => {
+    console.log(v);
+    submitHandler && submitHandler();
+  };
   return (
     <section className={styles.formWrapper}>
       <Form
-        onSubmit={(v) => console.log(v)}
+        onSubmit={(v) => onSubmit(v)}
         render={({ handleSubmit }) => (
           <form className={styles.form} onSubmit={handleSubmit}>
             <h3 className={styles.formTitle}>Получить Mindmap</h3>

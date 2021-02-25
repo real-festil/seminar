@@ -1,37 +1,26 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { graphql, PageProps } from 'gatsby';
-
-import Layout from '../components/layout/layout';
-import SEO from '../components/seo';
-import Hero from 'components/hero';
-import styles from '../styles/indexPage.module.scss';
-import Persons from 'components/persons';
-import MindMapForm from 'components/mindMapForm';
-import Modal from 'components/modal';
-import { AcceptedModal } from 'components/modalsContent';
 import MediaQuery from 'react-responsive';
 
-interface IndexPageProps extends PageProps {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string;
-      };
-    };
-    allMarkdownRemark: {
-      nodes: any;
-    };
-  };
-}
+import Layout from '../components/layout/layout';
+import WhatYouGet from 'components/whatYouGet';
+import SEO from '../components/seo';
+import Hero from 'components/hero';
+import styles from '../styles/congratPage.module.scss';
+import emailImg from '../../content/assets/email.png';
+import Persons from 'components/persons';
+import WebinarForm from 'components/webinarForm';
 
-const Index = ({ location }: IndexPageProps) => {
-  const [isModalVisible, setIsModalVisible] = useState(false);
-
+const Congratulations = ({ location }: PageProps) => {
   return (
     <Layout location={location}>
-      <SEO title="MindMap" />
-      <Hero />
-      <h3 className={styles.title}>Как работать с MindMap:</h3>
+      <SEO title="Поздравляем" />
+      <h3 className={styles.title}>Mindmap отправлен к вам на почту</h3>
+      <img src={emailImg} alt="email" className={styles.image} />
+      <p className={styles.subtitle}>
+        Проверьте папку &ldquo;спам&ldquo; и &ldquo;промоакции&ldquo; если
+        письмо не пришло в течении 5 минут
+      </p>
       <MediaQuery maxDeviceWidth={768}>
         <iframe
           src="https://player.vimeo.com/video/470292592?app_id=122963"
@@ -54,18 +43,15 @@ const Index = ({ location }: IndexPageProps) => {
           title="DIDDLY SQUAT"
         ></iframe>
       </MediaQuery>
+      <Hero isWebinar />
+      <WhatYouGet />
       <Persons />
-      <MindMapForm submitHandler={() => setIsModalVisible(true)} />
-      {isModalVisible && (
-        <Modal onClose={() => setIsModalVisible(false)}>
-          <AcceptedModal onClose={() => setIsModalVisible(false)} />
-        </Modal>
-      )}
+      <WebinarForm />
     </Layout>
   );
 };
 
-export default Index;
+export default Congratulations;
 
 export const pageQuery = graphql`
   query {

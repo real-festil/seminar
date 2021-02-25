@@ -4,10 +4,9 @@
   background: linear-gradient(5.94deg, #6378da 5.81%, #6a81e3 94.86%);
   border-radius: 50px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 120px 70px 130px;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 120px 200px 130px 100px;
   color: $white;
   margin-top: 90px;
 
@@ -15,13 +14,56 @@
     padding: 30px 20px 40px;
     margin: 90px 20px 0;
     border-radius: 24px;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  &Dates {
+    display: flex;
+
+    @media (max-width: 768px) {
+      justify-content: space-between;
+      margin-bottom: 30px;
+    }
+
+    &Block {
+      margin-right: 60px;
+
+      @media (max-width: 768px) {
+        margin: 0;
+      }
+    }
+
+    &Wrapper {
+      max-width: 40%;
+
+      @media (max-width: 768px) {
+        max-width: 100%;
+      }
+    }
+
+    &Label {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 28px;
+      margin: 0;
+    }
+  }
+
+  &Date {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 36px;
+    margin: 0;
+    margin-top: 6px;
   }
 
   &Title {
     color: $white;
     font-size: $titleSize;
     line-height: $titleHeight;
-    margin: 0 0 37px;
+    margin: 0 0 60px;
 
     @media (max-width: 768px) {
       font-size: 28px;
@@ -33,9 +75,18 @@
   &Fields {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     @media (max-width: 768px) {
       flex-direction: column;
+    }
+
+    &Title {
+      font-size: 20px;
+      line-height: 36px;
+      color: $white;
+      margin: 0;
+      margin-bottom: 22px;
     }
   }
 
@@ -48,6 +99,7 @@
     border-radius: 12px;
     font-size: $regularSizeSm;
     line-height: 24px;
+    margin-bottom: 14px;
     &::placeholder {
       color: $gray;
     }
@@ -74,7 +126,6 @@
   }
 
   button {
-    margin: 48px 0 0;
     padding-left: 72px;
     padding-right: 72px;
 
@@ -101,5 +152,11 @@
       position: absolute;
       z-index: -1;
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    width: 100%;
   }
 }
