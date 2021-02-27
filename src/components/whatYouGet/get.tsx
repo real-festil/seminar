@@ -38,10 +38,16 @@ const features = [
   },
 ];
 
-const WhatYouGet = () => {
+interface IWhatYouGet {
+  title?: string;
+}
+
+const WhatYouGet = ({ title }: IWhatYouGet) => {
   return (
     <section className={styles.get}>
-      <h3 className={styles.getTitle}>На вебинаре вы получите:</h3>
+      <h3 className={styles.getTitle}>
+        {title ? title : `На вебинаре вы получите:`}
+      </h3>
       {features.map((feat, index) => (
         <div key={feat.id} className={styles.getBlock}>
           <div className={styles.getBlockIcon}>{feat.img}</div>

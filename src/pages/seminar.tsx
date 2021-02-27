@@ -4,24 +4,24 @@ import { graphql, PageProps } from 'gatsby';
 import Layout from '../components/layout/layout';
 import WhatYouGet from 'components/whatYouGet';
 import SEO from '../components/seo';
-import Hero from 'components/hero';
+import SeminarHero from 'components/seminarHero';
 import Persons from 'components/persons';
-import WebinarForm from 'components/webinarForm';
+import WhatYouLearn from 'components/whatYouLearn';
 
-const Webinar = ({ location }: PageProps) => {
+const Seminar = ({ location }: PageProps) => {
   return (
     <Layout location={location}>
-      <SEO title="Вебинар" />
+      <SEO title="Семинар" />
 
-      <Hero isWebinar />
-      <WhatYouGet />
+      <SeminarHero />
+      <WhatYouGet title="Вы получите" />
+      <WhatYouLearn />
       <Persons />
-      <WebinarForm />
     </Layout>
   );
 };
 
-export default Webinar;
+export default Seminar;
 
 export const pageQuery = graphql`
   query {
